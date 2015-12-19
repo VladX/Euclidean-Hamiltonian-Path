@@ -58,8 +58,12 @@ static vector< vector<int> > EG;
 static vector<size_t> euler_path;
 static SDL_Window * window;
 static double triangulation_time, mst_time, epm_time, euler_time;
+static float scale_factor_x = 1.0;
+static float scale_factor_y = 1.0;
 
 static void reshape (int w, int h) {
+	scale_factor_x = 1.0 / w;
+	scale_factor_y = 1.0 / h;
 	glViewport(0, 0, w, h);
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 	glClearDepth(1.0);
@@ -113,6 +117,11 @@ static inline void glDrawPoint (float x, float y, double R = 8.0) {
 	glBegin(GL_POINTS);
 	glVertex2f(x, y);
 	glEnd();
+	/*constexpr const unsigned kVer = 10;
+	glBegin(GL_POLYGON);
+	for (unsigned i = 0; i < kVer; ++i)
+		glVertex2f(x + cosf(i * 2 * M_PI / kVer) * R * scale_factor_x * 0.5f, y + sinf(i * 2 * M_PI / kVer) * R * scale_factor_y * 0.5f);
+	glEnd();*/
 }
 
 static inline void glDrawLine (float x0, float y0, float x1, float y1) {
