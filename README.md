@@ -6,4 +6,4 @@ This demo shows all steps of algorithm
 ![Output][output]
 
 [demo]: https://raw.githubusercontent.com/VladX/Euclidean-Hamiltonian-Path/master/img/anim.gif
-[demo]: https://raw.githubusercontent.com/VladX/Euclidean-Hamiltonian-Path/master/img/output.png
+[output]: https://raw.githubusercontent.com/VladX/Euclidean-Hamiltonian-Path/master/img/output.png
